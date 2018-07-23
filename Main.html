@@ -11,15 +11,30 @@
 			<h1 align="center"> CUSTOMER RELATIONSHIP MANAGEMENT</h1>
 		</div>
 		<div id="Campaign-Filter">
-				<h3> Campaign-Filter</h3>
-				<label>Search: <input ng-model="searchText"></label>
+				<h3>Campaign-Filter</h3>
+				<form >
+  					<input list="campaigns" ng-model="campaign">
+  					<datalist id="campaigns">
+
+    					<option value="Update Aadhar">
+    					<option value="Lost Debit Card">
+    					
+  					</datalist>
+  				
+				</form>
+
 				
+		</div>
+		<br><br>
+		<div id="Search">
+			<label>Search: <input ng-model="searchText"></label>
+
 		</div>
 		<div id="Pending-List">
 			<h3>PENDING LIST</h3>
 			<table id="Pending-Table">
   				<tr><th>Name</th><th>Phone</th><th>Campaign</th><th>Status</th></tr>
-  				<tr ng-repeat="customer in pendinglist | filter:searchText">
+  				<tr ng-repeat="customer in pendinglist | filter:searchText|filter:campaign">
     				<td>{{customer.name}}</td>
     				<td>{{customer.phone}}</td>
     				<td>{{customer.campaign}}</td>
@@ -32,7 +47,7 @@
 			<h3>COMPLETED LIST</h3>
 			<table id="Completed-Table">
   				<tr><th>Name</th><th>Phone</th><th>Campaign</th><th>Status</th></tr>
-  				<tr ng-repeat="customer in completedlist | filter:searchText">
+  				<tr ng-repeat="customer in completedlist | filter:searchText |filter:campaign">
     				<td>{{customer.name}}</td>
     				<td>{{customer.phone}}</td>
     				<td>{{customer.campaign}}</td>
