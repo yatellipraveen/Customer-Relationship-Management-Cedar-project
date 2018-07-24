@@ -20,10 +20,7 @@
     					<option value="Lost Debit Card">
     					
   					</datalist>
-  				
-				</form>
-
-				
+				</form>	
 		</div>
 		<br><br>
 		<div id="Search">
@@ -38,7 +35,10 @@
     				<td>{{customer.name}}</td>
     				<td>{{customer.phone}}</td>
     				<td>{{customer.campaign}}</td>
-    				<td>{{customer.status}}</td>
+					<td>{{customer.status}}</td>
+					<td>
+					<button class="remove"  ng-click="moveToCompletedList($index)">Completed</button>
+					</td>
   				</tr>
 			</table>
 		</div>
